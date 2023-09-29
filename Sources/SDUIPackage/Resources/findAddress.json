@@ -1,0 +1,387 @@
+{
+    "screen_identifier": "find_address_1",
+    "padding": {
+        "top": 100.0,
+        "left": 20.0,
+        "right": 20.0,
+        "bottom": 20.0
+    },
+    "body": {
+        "identifier": "find_Address",
+        "subviews": [
+            {
+                "type": "VStack",
+                "identifier": "main_view1",
+                "properties": {
+                    "backgroundColor": "#FFFFFF"
+                },
+                "subviews": [
+                    {
+                        "type": "HStack",
+                        "identifier": "header_view",
+                        "properties": {
+                            "backgroundColor": "#17321F"
+                        },
+                        "subviews": [
+                            {
+                                "type": "image",
+                                "identifier": "bank_icon",
+                                "properties": {
+                                    "title": "bank_icon",
+                                    "padding": {
+                                        "top": 10.0,
+                                        "left": 10.0,
+                                    },
+                                    "size": {
+                                        "height":50.0,
+                                        "width":50.0
+                                    }
+                                }
+                            },
+                            {
+                                "type": "label",
+                                "identifier": "title_label",
+                                "properties": {
+                                    "title": "Lloyds Banking",
+                                    "color": "#FFFFFF",
+                                    "padding": {
+                                        "top": 8.0,
+                                        "left" : 8.0,
+                                        "right": 8.0,
+                                        "bottom": 8.0
+                                    },
+                                    "textAlignment":"right"
+                                }
+                            },
+                            {
+                                "type": "image",
+                                "identifier": "lock_image",
+                                "properties": {
+                                    "title": "lock_icon",
+                                    "padding": {
+                                        "top": 10.0,
+                                        "left": 10.0,
+                                    },
+                                    "size": {
+                                        "height":20.0,
+                                        "width":20.0
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "scrollView",
+                        "identifier": "content_scroll_view",
+                        "properties": {
+                            "padding": {
+                                "top": 10.0,
+                                "left": 10.0,
+                            }
+                        },
+                        "subviews": [
+                            {
+                                "type": "label",
+                                "identifier": "cuurrent_account_label",
+                                "properties": {
+                                    "title": "Business Current Account Application",
+                                    "color": "#000000",
+                                    "padding": {
+                                        "top": 10.0,
+                                    },
+                                    "fontSize":16
+                                }
+                            },
+                            {
+                                "type": "label",
+                                "identifier": "name_label",
+                                "properties": {
+                                    "title": "What's your home address?",
+                                    "color": "#17321F",
+                                    "padding": {
+                                        "top": 5.0,
+                                        "bottom": 10.0
+                                    },
+                                    "fontSize":40
+                                }
+                            },
+                            {
+                                "type": "label",
+                                "identifier": "cuurrent_account_label_1",
+                                "properties": {
+                                    "title": "We need to know where you have lived for the last 3 years",
+                                    "color": "#000000",
+                                    "padding": {
+                                        "top": 10.0,
+                                        "bottom": 10.0
+                                    },
+                                    "fontSize":16
+                                }
+                            },
+                            {
+                                "type": "label",
+                                "identifier": "cuurrent_account_label_2",
+                                "properties": {
+                                    "title": "101 old Road\nEast grinslead West Sensex\n30201 3HT",
+                                    "color": "#000000",
+                                    "padding": {
+                                        "top": 10.0,
+                                        "bottom": 5.0
+                                    },
+                                    "fontSize":16
+                                }
+                            },
+                            {
+                                "type": "button",
+                                "identifier": "edit_this_address",
+                                "properties": {
+                                    "title": "Edit this address",
+                                    "backgroundColor": "#FFFFFF",
+                                    "color": "#17321F",
+                                    "padding": {
+                                        "top": 10.0,
+                                        "bottom": 10.0,
+                                        "left":0.0
+                                    },
+                                    "size": {
+                                        "height":30.0,
+                                        "width":200.0
+                                    },
+                                    "fontSize":16,
+                                    "textAlignment":"left",
+                                    "isUnderline":true
+                                }
+                            },
+                            {
+                                "type": "HStack",
+                                "identifier": "address_header_view",
+                                "properties": {
+                                    "backgroundColor": "#FFFFFF",
+                                    "padding": {
+                                        "top": 8.0,
+                                        "left" : 0.0,
+                                        "right": 0.0,
+                                        "bottom": 8.0
+                                    },
+                                    "spacing":4.0
+                                },
+                                "subviews": [
+                                {
+                                    "type": "label",
+                                    "identifier": "edit_again_this_address",
+                                    "properties": {
+                                        "title": "Start again using our ",
+                                        "color": "#000000",
+                                        "padding": {
+                                            "top": 10.0,
+                                            "bottom": 5.0
+                                        },
+                                        "fontSize":16,
+                                        "size": {
+                                            "width": 155.0
+                                        }
+                                    }
+                                },
+                                {
+                                    "identifier": "address_finder_button",
+                                    "type": "button",
+                                    "properties": {
+                                        "title": "address finder",
+                                        "backgroundColor": "#FFFFFF",
+                                        "color": "#17321F",
+                                        "padding": {
+                                            "top": 10.0,
+                                            "bottom": 5.0
+                                        },
+                                        "isUnderline":true
+                                    }
+                                }
+                                ]
+                            },
+                            {
+                                "type": "label",
+                                "identifier": "when_did_you_move",
+                                "properties": {
+                                    "title": "When did you move to this address?",
+                                    "color": "#000000",
+                                    "padding": {
+                                        "top": 10.0,
+                                        "bottom": 5.0
+                                    },
+                                    "fontSize":16
+                                }
+                            },
+                            {
+                                "type": "HStack",
+                                "identifier": "month_header_view",
+                                "properties": {
+                                    "backgroundColor": "#FFFFFF",
+                                    "padding": {
+                                        "top": 8.0,
+                                        "left" : 8.0,
+                                        "right": 8.0,
+                                        "bottom": 8.0
+                                    },
+                                    "spacing":10.0
+                                },
+                                "subviews": [
+                                    {
+                                        "type": "VStack",
+                                        "identifier": "month_view",
+                                        "properties": {
+                                            "backgroundColor": "#FFFFFF"
+                                        },
+                                        "subviews": [
+                                        {
+                                            "type": "label",
+                                            "identifier": "title_month",
+                                            "properties": {
+                                                "title": "Month",
+                                                "color": "#000000",
+                                                "padding": {
+                                                    "top": 8.0,
+                                                    "left" : 0.0,
+                                                    "right": 8.0,
+                                                    "bottom": 8.0
+                                                },
+                                                "textAlignment":"center",
+                                                "size": {
+                                                    "width": 120.0
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "dropdown",
+                                            "identifier": "month_dropdown",
+                                            "properties": {
+                                                "placeHolder": "Select",
+                                                "mandatory": true,
+                                                "color": "#000000",
+                                                "size": {
+                                                    "height":40.0,
+                                                    "width":120.0
+                                                },
+                                                "options" : ["January",
+                                                    "February",
+                                                    "March",
+                                                    "April",
+                                                    "May",
+                                                    "June",
+                                                    "July",
+                                                    "August",
+                                                    "September",
+                                                    "October",
+                                                    "November",
+                                                    "December"],
+                                                "backgroundColor": "#17321F"
+
+                                            }
+                                        }
+                                        ]
+                                    },
+                                    {
+                                        "type": "VStack",
+                                        "identifier": "year_view",
+                                        "properties": {
+                                            "backgroundColor": "#FFFFFF"
+                                        },
+                                        "subviews": [
+                                        {
+                                            "type": "label",
+                                            "identifier": "title_year",
+                                            "properties": {
+                                                "title": "Year",
+                                                "color": "#000000",
+                                                "padding": {
+                                                    "top": 8.0,
+                                                    "left" : 0.0,
+                                                    "right": 8.0,
+                                                    "bottom": 8.0
+                                                },
+                                                "textAlignment":"left",
+                                                "size": {
+                                                    "width": 120.0
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "textField",
+                                            "identifier": "year_textfield",
+                                            "properties": {
+                                                "placeHolder": "year",
+                                                "mandatory": true,
+                                                "color": "#000000",
+                                                "size": {
+                                                    "height":40.0,
+                                                    "width":80.0
+                                                },
+                                                "validation": {
+                                                    "max": {
+                                                        "value": 18,
+                                                        "message": "Maximum character limit exceeded. Please shorten your input to 18 characters or less."
+                                                    },
+                                                    "min": {
+                                                        "value": 3,
+                                                        "message": "Please enter a valid first name. This field should only contain letters and should be at least 3 characters long."
+                                                    },
+                                                    "regex": "^[a-zA-Z df ]{3,18}$"
+                                                },
+                                                "backgroundColor": "#17321F"
+                                            }
+                                        }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "identifier": "continue_button",
+                                "type": "button",
+                                "properties": {
+                                    "title": "Continue",
+                                    "backgroundColor": "#17321F",
+                                    "color": "#ffffff",
+                                    "padding": {
+                                        "top": 10.0,
+                                        "bottom": 10.0
+                                    },
+                                    "size": {
+                                        "height":50.0,
+                                    },
+                                    "action": {
+                                        "type": "submit",
+                                        "destination": "nationality",
+                                        "navigationType": "PUSH"
+                                    }
+                                }
+                            },
+                            {
+                                "identifier": "previous_button",
+                                "type": "button",
+                                "properties": {
+                                    "title": "Previous",
+                                    "color": "#000000",
+                                    "padding": {
+                                        "top": 5.0,
+                                        "bottom": 10.0
+                                    },
+                                    "size": {
+                                        "height":40.0,
+                                    },
+                                    "action": {
+                                        "type": "submit",
+                                        "destination": "homeAddress",
+                                        "navigationType": "POP"
+                                    }
+                                }
+                            }
+                            
+                        ]
+                    }
+                ]
+            }
+            
+            
+        ]
+    }
+}
+
