@@ -315,17 +315,6 @@
                                                     "height":40.0,
                                                     "width":80.0
                                                 },
-                                                "validation": {
-                                                    "max": {
-                                                        "value": 18,
-                                                        "message": "Maximum character limit exceeded. Please shorten your input to 18 characters or less."
-                                                    },
-                                                    "min": {
-                                                        "value": 3,
-                                                        "message": "Please enter a valid first name. This field should only contain letters and should be at least 3 characters long."
-                                                    },
-                                                    "regex": "^[a-zA-Z df ]{3,18}$"
-                                                },
                                                 "backgroundColor": "#17321F"
                                             }
                                         }
