@@ -23,7 +23,7 @@ struct PSDropDownTextFieldBuilder: UIComponentBuilder {
             set: { newValue in viewModel.setSelectedDropDownValue(value: newValue)}
         )
         
-        let configuration = PSDropdownTextFieldConfig(title: "Select", 
+        let configuration = PSDropdownTextFieldConfig(title: Constants.select, 
                                                       options: element.properties.options ?? [],
                                                       selection: binding,
                                                       height: CGFloat(element.properties.size.height),

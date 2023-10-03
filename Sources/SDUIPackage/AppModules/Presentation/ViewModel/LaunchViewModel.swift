@@ -18,9 +18,9 @@ public final class LaunchViewModel: LaunchViewModelProtocol, ObservableObject {
     private var textFieldValues: [String: [String : Any]] = [:]
     @Published var textFieldErrorMessage: [String: String] = [:]
     @Published var selectedSegmentIndex: Int = 0
-    @Published var selectedDropDownValue: String = "Select"
+    @Published var selectedDropDownValue: String = Constants.select
 
-    var screenIdentifier: String = "onboarding"
+    var screenIdentifier: String = DataConstants.ApiEndpoints.LaunchView
 
     init(useCase:LaunchUseCaseProtocol) {
         self.useCase = useCase
@@ -55,7 +55,7 @@ public final class LaunchViewModel: LaunchViewModelProtocol, ObservableObject {
         var tempValue = true
         var errorVlaues: [String : String] = [:]
         
-        if self.selectedDropDownValue == "Select" {
+        if self.selectedDropDownValue == Constants.select {
             print("Select value")
             return
         }

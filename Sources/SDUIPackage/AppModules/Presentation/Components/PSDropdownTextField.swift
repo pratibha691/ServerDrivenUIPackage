@@ -57,7 +57,7 @@ struct PSDropdownTextField: View {
             } label: {
                 Text(textFieldText)
                     .background(Color.clear)
-                    .foregroundColor(textFieldText == "Select" ? .gray : .black)
+                    .foregroundColor(textFieldText == Constants.select ? .gray : .black)
                     .cornerRadius(8)
                     .frame(maxWidth: .infinity, alignment:.leading)
                     .frame(height: configuration.height)
