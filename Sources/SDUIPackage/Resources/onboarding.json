@@ -252,7 +252,7 @@
                                         },
                                         "min": {
                                             "value": 3,
-                                            "message": "Please enter a valid first name. This field should only contain letters and should be at least 3 characters long."
+                                            "message": "Please enter a valid middle name. This field should only contain letters and should be at least 3 characters long."
                                         },
                                         "regex": "^[a-zA-Z ]{3,18}$"
                                     },
@@ -294,7 +294,7 @@
                                         },
                                         "min": {
                                             "value": 3,
-                                            "message": "Please enter a valid first name. This field should only contain letters and should be at least 3 characters long."
+                                            "message": "Please enter a valid last name. This field should only contain letters and should be at least 3 characters long."
                                         },
                                         "regex": "^[a-zA-Z ]{3,18}$"
                                     },
