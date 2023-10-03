@@ -329,7 +329,7 @@
                                 "type": "Segment",
                                 "identifier": "segment_control",
                                 "properties": {
-                                    "backgroundColor": "#FFFFFF",
+                                    "backgroundColor": "#17321F",
                                     "options" : ["YES", "NO"]
                                 }
                             },

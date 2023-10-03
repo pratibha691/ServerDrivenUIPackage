@@ -32,7 +32,7 @@ struct PSSegmentControl: View {
                         .frame(width: 100)
                         .foregroundColor(index == configuration.selectedSegmentIndex.wrappedValue ? .white : .black)
                 }
-                .background(index == configuration.selectedSegmentIndex.wrappedValue ? Color.black : Color.clear)
+                .background(index == configuration.selectedSegmentIndex.wrappedValue ? Color(hex: configuration.backgroundColor) : Color.clear)
                 
             }
         }.background(Color(hex: configuration.backgroundColor))
