@@ -329,8 +329,9 @@
                                 "type": "Segment",
                                 "identifier": "segment_control",
                                 "properties": {
-                                    "backgroundColor": "#17321F",
-                                    "options" : ["YES", "NO"]
+                                    "backgroundColor": "#FFFFFF",
+                                    "options" : ["YES", "NO"],
+                                    "selectedColor":"#17321F"
                                 }
                             },
                             {

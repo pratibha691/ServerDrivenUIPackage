@@ -11,11 +11,13 @@ protocol SegmentControlConfigurable {
     var segments: [String] { get set }
     var selectedSegmentIndex: Binding<Int> { get set }
     var backgroundColor: String { get }
+    var selectedColor: String { get }
 }
 struct SegmentControlConfig: SegmentControlConfigurable {
     var segments: [String]
     var selectedSegmentIndex: Binding<Int>
     var backgroundColor: String
+    var selectedColor: String
 }
 
 struct PSSegmentControl: View {
@@ -32,7 +34,7 @@ struct PSSegmentControl: View {
                         .frame(width: 100)
                         .foregroundColor(index == configuration.selectedSegmentIndex.wrappedValue ? .white : .black)
                 }
-                .background(index == configuration.selectedSegmentIndex.wrappedValue ? Color(hex: configuration.backgroundColor) : Color.clear)
+                .background(index == configuration.selectedSegmentIndex.wrappedValue ? Color(hex: configuration.selectedColor) : Color.clear)
                 
             }
         }.background(Color(hex: configuration.backgroundColor))

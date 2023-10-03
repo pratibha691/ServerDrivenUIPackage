@@ -27,7 +27,8 @@ struct PSSegmentControlBuilder: UIComponentBuilder {
             configuration: SegmentControlConfig(
                 segments: element.properties.options ?? [],
                 selectedSegmentIndex: binding,
-                backgroundColor: element.properties.backgroundColor
+                backgroundColor: element.properties.backgroundColor,
+                selectedColor: element.properties.selectedColor
             )
         )
     }
