@@ -39,7 +39,7 @@ struct PSDropdownTextField: View {
         ZStack {
             HStack {
                 Spacer()
-                Image("down")
+                Image("down", bundle: Bundle.module)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 20,alignment: .trailing)
