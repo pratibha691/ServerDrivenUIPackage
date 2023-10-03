@@ -40,14 +40,17 @@ extension String {
     }
     
     func isValid(validations:ValidationRules?) -> (Bool, String) {
+        guard let validations = validations else {
+            return (true, "")
+        }
         var errorMessage = ""
         
-        let regex = validations?.regex ?? ""
-        let minLength = validations?.min?.value
-        let maxLength = validations?.max?.value
+        let regex = validations.regex ?? ""
+        let minLength = validations.min?.value
+        let maxLength = validations.max?.value
         
         if self.isEmpty {
-            errorMessage = validations?.min?.message ?? ""
+            errorMessage = validations.min?.message ?? ""
             return (false, errorMessage)
         }
         
@@ -57,11 +60,11 @@ extension String {
             guard regex.firstMatch(in: self, options: [], range: range) != nil else {
                 // Check the length constraints
                 if let minLength = minLength, self.count < minLength {
-                    errorMessage = validations?.min?.message ?? ""
+                    errorMessage = validations.min?.message ?? ""
                     return (false, errorMessage) // Input is too short
                 }
                 if let maxLength = maxLength, self.count > maxLength {
-                    errorMessage = validations?.max?.message ?? ""
+                    errorMessage = validations.max?.message ?? ""
                     return (false, errorMessage) // Input is too long
                 }
                 errorMessage = "Error"
