@@ -75,6 +75,7 @@ struct PSTextField : View {
                     .foregroundColor(.red)
                     .font(.caption)
                     .padding(.top, 8)
+                    .padding(.bottom, errorMessage.isEmpty ? 0 : 8)
             }
         }
     }
