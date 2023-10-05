@@ -78,4 +78,29 @@ extension String {
         errorMessage = ""
         return (true, errorMessage) // Input is valid
     }
+    
+    func keyboardType() -> UIKeyboardType {
+        switch self.lowercased() {
+        case "default":
+            return .default
+        case "asciicapable":
+            return .asciiCapable
+        case "numbersandpunctuation":
+            return .numbersAndPunctuation
+        case "url":
+            return .URL
+        case "numberpad":
+            return .numberPad
+        case "phonepad":
+            return .phonePad
+        case "namephonepad":
+            return .namePhonePad
+        case "emailaddress":
+            return .emailAddress
+        case "decimalpad":
+            return .decimalPad
+        default:
+            return .default
+        }
+    }
 }

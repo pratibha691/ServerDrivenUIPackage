@@ -27,11 +27,10 @@ struct PSTextFieldBuilder: UIComponentBuilder {
             set: { newValue in
                 viewModel.setErrorTextFieldValue(for: element.identifier, value: newValue)
             }
-            
         )
-        
+        let keyboard = element.properties.keyboardType ?? ""
         let configuration = PSTextFieldConfig(text: binding, 
-                                              keyboardType: .asciiCapable,
+                                              keyboardType: keyboard.keyboardType(),
                                               placeHolder: element.properties.placeHolder,
                                               height: CGFloat(element.properties.size.height),
                                               width: CGFloat(element.properties.size.width),
