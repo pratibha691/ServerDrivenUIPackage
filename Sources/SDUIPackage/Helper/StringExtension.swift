@@ -67,7 +67,7 @@ extension String {
                     errorMessage = validations.max?.message ?? ""
                     return (false, errorMessage) // Input is too long
                 }
-                errorMessage = "Error"
+                errorMessage = validations.min?.message ?? ""
                 return (false, errorMessage)
             }
         } else {
