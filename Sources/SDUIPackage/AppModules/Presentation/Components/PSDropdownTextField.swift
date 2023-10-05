@@ -52,6 +52,7 @@ struct PSDropdownTextField: View {
                     }) {
                         Text(valueD)
                     }
+                    
                 }
                 
             } label: {
@@ -67,9 +68,9 @@ struct PSDropdownTextField: View {
             .frame(maxWidth: configuration.width == 0 ? .infinity : configuration.width)
             .foregroundColor(.black)
             .background(Color.clear)
-            
+            .animation(.easeInOut(duration: 0.3))
             .onChange(of: textFieldText, perform: { newValue in
-                    self.configuration.selection.wrappedValue = newValue
+                self.configuration.selection.wrappedValue = newValue
             })
             
             
@@ -79,4 +80,3 @@ struct PSDropdownTextField: View {
         )
     }
 }
-
