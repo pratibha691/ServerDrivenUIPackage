@@ -12,9 +12,11 @@ struct PSTextFieldBuilder: UIComponentBuilder {
     
     typealias ComponentType = PSTextField
     let viewModel: LaunchViewModelProtocol
-    
-    init(viewModel: LaunchViewModelProtocol) {
+    @FocusState var focusedField: String?
+
+    init(viewModel: LaunchViewModelProtocol, focusV: FocusState<String?>) {
         self.viewModel = viewModel
+        _focusedField = focusV
     }
     @MainActor
     func build(element: SubView) -> PSTextField {
@@ -41,8 +43,13 @@ struct PSTextFieldBuilder: UIComponentBuilder {
                                                                   trailing: CGFloat(element.properties.padding.paddingRight)),
                                               validation: element.properties.validation,
                                               error: errorBinding, 
-                                              isErrorMessage: element.properties.isErrorMessage)
-        let customTextField = PSTextField(configuration: configuration)
+                                              isErrorMessage: element.properties.isErrorMessage,
+                                              identifier: element.identifier)
+        let customTextField = PSTextField(configuration: configuration, focus: _focusedField, nextFocusIdentifer: { formValue in
+            if let index = self.viewModel.formFields.firstIndex(where: {$0 == formValue}) {
+                self.focusedField = self.viewModel.formFields.indices.contains(index + 1) ? self.viewModel.formFields[index + 1] : ""
+            }
+        })
         return customTextField
     }
 }

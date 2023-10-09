@@ -20,4 +20,5 @@ protocol LaunchViewModelProtocol {
     func setErrorTextFieldValue(for identifier: String, value: String)
     func setSelectedSegmentIndex(index: Int)
     func setSelectedDropDownValue(value: String)
+    var formFields: [String] { get }
 }

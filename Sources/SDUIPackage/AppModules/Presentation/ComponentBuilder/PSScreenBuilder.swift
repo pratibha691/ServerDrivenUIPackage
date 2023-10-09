@@ -16,18 +16,19 @@ protocol UIComponentBuilder {
 @MainActor
 class PSScreenBuilder {
     let viewModel: LaunchViewModelProtocol
-    
-    init(viewModel: LaunchViewModelProtocol) {
+    @FocusState var focusValue:String?
+    init(viewModel: LaunchViewModelProtocol, focus: FocusState<String?>) {
         self.viewModel = viewModel
+        _focusValue = focus
     }
     
     @ViewBuilder
     func createComponentView(_ component: SubView) -> some View {
         switch component.type {
         case .scrollView:
-            PSScrollViewViewBuilder(viewModel: viewModel).build(element: component)
+            PSScrollViewViewBuilder(viewModel: viewModel, focus: _focusValue).build(element: component)
         case .textField:
-            PSTextFieldBuilder(viewModel: viewModel).build(element: component)
+            PSTextFieldBuilder(viewModel: viewModel, focusV: _focusValue).build(element: component)
         case .button:
             PSButtonBuilder(viewModel: viewModel).build(element: component)
         case .label:
@@ -35,13 +36,13 @@ class PSScreenBuilder {
         case .Segment:
             PSSegmentControlBuilder(viewModel: viewModel).build(element: component)
         case .view:
-            PSViewBuilder(viewModel: viewModel).build(element: component)
+            PSViewBuilder(viewModel: viewModel, focus: _focusValue).build(element: component)
         case .image:
             PSImageViewBuilder().build(element: component)
         case .HStack:
-            PSHStackViewBuilder(viewModel: viewModel).build(element: component)
+            PSHStackViewBuilder(viewModel: viewModel, focus: _focusValue).build(element: component)
         case .VStack:
-            PSVStackViewBuilder(viewModel: viewModel).build(element: component)
+            PSVStackViewBuilder(viewModel: viewModel, focus: _focusValue).build(element: component)
         case .dropdown:
             PSDropDownTextFieldBuilder(viewModel: viewModel).build(element: component)
         }

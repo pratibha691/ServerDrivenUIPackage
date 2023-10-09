@@ -12,17 +12,18 @@ struct PSScrollViewViewBuilder: UIComponentBuilder {
     
     typealias ComponentType = PSScrollView
     let viewModel: LaunchViewModelProtocol
-    
-    init(viewModel: LaunchViewModelProtocol) {
+    @FocusState var focusedField: String?
+    init(viewModel: LaunchViewModelProtocol, focus: FocusState<String?>) {
         self.viewModel = viewModel
+        _focusedField = focus
     }
     @MainActor
     func build(element: SubView) -> PSScrollView {
         PSScrollView(configuration: PSScrollViewConfig(content: {
             ForEach(element.subviews ?? [], id: \.identifier) { field in
-                PSScreenBuilder(viewModel: viewModel).createComponentView(field)
+                PSScreenBuilder(viewModel: viewModel, focus: _focusedField).createComponentView(field)
             }
-        }))
+        }), focusedField: _focusedField)
         
     }
 }

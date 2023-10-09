@@ -12,8 +12,10 @@ struct PSVStackViewBuilder: UIComponentBuilder {
     typealias ComponentType = PSVStackView
     let viewModel: LaunchViewModelProtocol
     
-    init(viewModel: LaunchViewModelProtocol) {
+    @FocusState var focusedField: String?
+    init(viewModel: LaunchViewModelProtocol, focus: FocusState<String?>) {
         self.viewModel = viewModel
+        _focusedField = focus
     }
     
     @MainActor
@@ -22,7 +24,7 @@ struct PSVStackViewBuilder: UIComponentBuilder {
             configuration: PSVStackViewConfiguration(
                 content: {
                     ForEach(element.subviews ?? [], id: \.identifier) { field in
-                        PSScreenBuilder(viewModel: viewModel).createComponentView(field)
+                        PSScreenBuilder(viewModel: viewModel, focus: _focusedField).createComponentView(field)
                     }
                 },
                 backgroundColor: element.properties.backgroundColor

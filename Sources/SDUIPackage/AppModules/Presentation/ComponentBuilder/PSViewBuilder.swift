@@ -12,8 +12,10 @@ struct PSViewBuilder: UIComponentBuilder {
     typealias ComponentType = PSView
     let viewModel: LaunchViewModelProtocol
     
-    init(viewModel: LaunchViewModelProtocol) {
+    @FocusState var focusedField: String?
+    init(viewModel: LaunchViewModelProtocol, focus: FocusState<String?>) {
         self.viewModel = viewModel
+        _focusedField = focus
     }
     
     @MainActor
@@ -22,7 +24,7 @@ struct PSViewBuilder: UIComponentBuilder {
             configuration: PSViewConfiguration(
                 content: {
                     ForEach(element.subviews ?? [], id: \.identifier) { field in
-                        PSScreenBuilder(viewModel: viewModel).createComponentView(field)
+                        PSScreenBuilder(viewModel: viewModel, focus: _focusedField).createComponentView(field)
                     }
                 },
                 backgroundColor: element.properties.backgroundColor

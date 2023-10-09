@@ -26,7 +26,7 @@ struct PSScrollViewConfig: PSScrollViewConfiguration {
 
 struct PSScrollView : View {
     let configuration: PSScrollViewConfig
-    
+    @FocusState var focusedField: String?
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {

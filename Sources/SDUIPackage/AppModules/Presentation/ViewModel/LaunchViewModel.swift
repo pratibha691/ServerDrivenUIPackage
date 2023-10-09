@@ -22,6 +22,8 @@ public final class LaunchViewModel: LaunchViewModelProtocol, ObservableObject {
 
     var screenIdentifier: String = DataConstants.ApiEndpoints.LaunchView
 
+    var formFields: [String] = []
+    
     init(useCase:LaunchUseCaseProtocol) {
         self.useCase = useCase
         setupButtonActions()
@@ -33,6 +35,7 @@ public final class LaunchViewModel: LaunchViewModelProtocol, ObservableObject {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveValue: { value in
                     self.currentScreenData = value
+                    self.setupFormFields(subView: value.body.subviews)
                     })
         }
     }
@@ -134,5 +137,15 @@ public final class LaunchViewModel: LaunchViewModelProtocol, ObservableObject {
     
     func setSelectedDropDownValue(value: String) {
         self.selectedDropDownValue = value
+    }
+    
+    func setupFormFields(subView: [SubView]?) {
+        for value in subView ?? [] {
+            if value.type == .textField {
+                self.formFields.append(value.identifier)
+            } else if value.subviews?.count ?? 0 > 0 {
+                self.setupFormFields(subView: value.subviews)
+            }
+        }
     }
 }
